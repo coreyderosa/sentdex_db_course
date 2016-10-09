@@ -36,9 +36,22 @@ def read_from_db(): #runs a query that shows all data in our table
         print(row[0]) #prints only the first column [0] in the db
 
 
+def graph_data():
+    c.execute('SELECT unix, value FROM stuffToPlot')
+    dates = []
+    values = []
+    for row in c.fetchall():
+        #print(row[0])
+        #print(datetime.datetime.fromtimestamp(row[0]))
+        dates.append(datetime.datetime.fromtimestamp(row[0]))
+        values.append(row[1])
 
+    plt.plot_date(dates, values, '-')
+    plt.show()
 
-
+def del_and_update():
+    c.execute('SELECT * FROM stuffToPlot')
+    [print(row) for row in c.fetchall()]
 
 #alt + 3 will comment out selected text
 ##create_table()
@@ -46,8 +59,9 @@ def read_from_db(): #runs a query that shows all data in our table
 ##for i in range(10):
 ##    dynamic_data_entry()
 ##    time.sleep(1)
-##    
 ##read_from_db()
+##graph_data()
+del_and_update()
 c.close()
 conn.close()
     
