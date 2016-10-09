@@ -7,10 +7,13 @@ def create_table():
     c.execute('CREATE TABLE IF NOT EXISTS stuffToPlot(unix REAL, datestamp TEXT, keyword TEXT, value REAL)')
 
 def data_entry():
-    c.execute("INSERT INTO stuffToPlot VALUES(3213254231, '2016-01-01', 'Python', 5)")
+    c.execute("INSERT INTO stuffToPlot VALUES(3213254231, '2016-01-02', 'Python', 8)")
     conn.commit() #need to run a commit whenever any update is made to a db
-    c.close()
-    conn.close()
+    
+    #c.close()
+    #conn.close()
+
+
 
 create_table()
 data_entry()
