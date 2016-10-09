@@ -59,12 +59,12 @@ def del_and_update():
 ##    c.execute('SELECT * FROM stuffToPlot')
 ##    [print(row) for row in c.fetchall()]
 
-    c.execute('DELETE FROM stuffToPlot WHERE value = 99')
+    c.execute('DELETE FROM stuffToPlot WHERE value = 99') #delete info from db
     conn.commit()
-    print(50* '#')
+    print(50* '#') #prints a bunch of ###### to show separation of old and updated db
 
-    c.execute('SELECT * FROM stuffToPlot')
-    [print(row) for row in c.fetchall()]          
+    c.execute('SELECT * FROM stuffToPlot') #query that shows all info in table
+    [print(row) for row in c.fetchall()] #this will print all rows of our new db
 
 #alt + 3 will comment out selected text
 ##create_table()
