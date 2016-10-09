@@ -3,6 +3,9 @@ import time
 import datetime
 import random
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from matplotlib import style
+style.use('fivethirtyeight')
 
 conn = sqlite3.connect('tutorial.db')
 c = conn.cursor()
@@ -44,7 +47,7 @@ def read_from_db(): #runs a query that shows all data in our table
 ##    dynamic_data_entry()
 ##    time.sleep(1)
 ##    
-#read_from_db()
+##read_from_db()
 c.close()
 conn.close()
     
