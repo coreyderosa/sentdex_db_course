@@ -53,11 +53,13 @@ def del_and_update():
     c.execute('SELECT * FROM stuffToPlot')
     [print(row) for row in c.fetchall()]
 
-    c.execute('UPDATE stuffToPlot SET value = 99 WHERE value = 8')
-    conn.commit()
+##    c.execute('UPDATE stuffToPlot SET value = 99 WHERE value = 8')
+##    conn.commit()
+##
+##    c.execute('SELECT * FROM stuffToPlot')
+##    [print(row) for row in c.fetchall()]
 
-    c.execute('SELECT * FROM stuffToPlot')
-    [print(row) for row in c.fetchall()]    
+    
 
 #alt + 3 will comment out selected text
 ##create_table()
